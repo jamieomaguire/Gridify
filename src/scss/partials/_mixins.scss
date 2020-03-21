@@ -1,0 +1,14 @@
+/**
+  * Generates dynamic class names
+  * Example: 
+  * .gfy-gap:1
+  * .gfy-gap:2
+  * .gfy-gap:3
+  */
+@mixin generated-variants($variant-count) {
+  @for $i from 1 through $variant-count {
+    &\:#{$i} {
+      @content($i);
+    }
+  }
+}

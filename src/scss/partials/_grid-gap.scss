@@ -1,0 +1,11 @@
+/**
+  * Defines the gap of a CSS Grid
+  */
+.gfy-grid-gap {
+  $grid-gap-fallback: 1rem;
+  $grid-gap: var(--grid-gap-base, #{$grid-gap-fallback});
+  
+  @include generated-variants($gap-iterations) using ($i) {
+    grid-gap: calc(#{$i} * #{$grid-gap}); 
+  }
+}

@@ -1,0 +1,11 @@
+/**
+  * Global variables
+  */
+
+// TODO: Client would set custom properties. Only Sass vars would be defined here.
+:root {
+  --grid-gap-base: 1rem;
+}
+
+$gap-iterations: 10;
+$cols-iterations: 12;

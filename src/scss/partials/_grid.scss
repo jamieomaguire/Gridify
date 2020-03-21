@@ -1,0 +1,11 @@
+/**
+  * Initialises a grid container
+  */
+.gfy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+div {
+  background: pink;
+}
