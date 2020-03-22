@@ -2,6 +2,11 @@
   * Sets up grid columns
   */
 .gfy-grid-cols {
+
+  &\:none {
+    grid-template-columns: none;
+  }
+  
   @include generated-variants($cols-iterations) using ($i) {
     grid-template-columns: repeat($i, minmax(0, 1fr));
   }
@@ -21,16 +26,4 @@
       }
     }
   }
-
-  // &\:s\:1 {
-  //   @media only screen and (max-width: 500px) {
-  //     grid-template-columns: repeat(1, 1fr);
-  //   }
-  // }
-
-  // &\:s\:2 {
-  //   @media only screen and (max-width: 500px) {
-  //     grid-template-columns: repeat(2, 1fr);
-  //   }
-  // }
 }

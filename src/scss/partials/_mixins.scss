@@ -1,23 +1,46 @@
 /**
   * Generates dynamic class names
   * Example: 
-  * .gfy-gap:1
-  * .gfy-gap:2
-  * .gfy-gap:3
+  * .gfy-grid-gap:1
+  * .gfy-grid-gap:2
+  * .gfy-grid-gap:3
   */
-@mixin generated-variants($variant-count) {
+@mixin generated-variants($variant-count, $extra-iteration: false) {
   @for $i from 1 through $variant-count {
     &\:#{$i} {
       @content($i);
     }
+
+    @if $extra-iteration {
+      @if $i == $variant-count {
+        &\:#{$i + 1} {
+          @content($i + 1);
+        }
+      }
+    }
   }
 }
 
-@mixin generated-size-variants($sizes, $variant-count) {
+/**
+  * Generates dynamic class names based on a particular screen size
+  * Example: 
+  * .gfy-col-span:sm:4
+  * .gfy-col-span:sm:3
+  * .gfy-col-span:sm:2
+  */
+@mixin generated-size-variants($sizes, $variant-count, $extra-iteration: false) {
   @each $size in $sizes {
-    @for $i from 1 through $variant-count {
+    @for $i from 1 through $variant-count {   
       &\:#{$size}\:#{$i} {
         @content($i, $size);
+      }
+
+      @if $extra-iteration {
+        @if $i == $variant-count {
+          &\:#{$size}\:#{$i + 1} {
+            @content($i + 1, $size);
+          }
+        }
       }
     }
   }

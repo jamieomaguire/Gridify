@@ -2,14 +2,26 @@
   * Sets up start and end for an individual column
   */
   .gfy-col {
+    &-auto {
+      grid-column: auto;
+    }
+
     &-start {
-      @include generated-variants($cols-iterations) using ($i) {
+      &\:auto {
+        grid-column-start: auto;
+      }
+
+      @include generated-variants($cols-iterations, true) using ($i) {
         grid-column-start: $i;
       }
     }
 
     &-end {
-      @include generated-variants($cols-iterations) using ($i) {
+      &\:auto {
+        grid-column-end: auto;
+      }
+
+      @include generated-variants($cols-iterations, true) using ($i) {
         grid-column-end: $i;
       }
     }
