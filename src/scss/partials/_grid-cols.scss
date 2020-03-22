@@ -7,11 +7,11 @@
     grid-template-columns: none;
   }
   
-  @include generated-variants($cols-iterations) using ($i) {
+  @include generated-variants($max-columns) using ($i) {
     grid-template-columns: repeat($i, minmax(0, 1fr));
   }
 
-  @include generated-size-variants($screen-sizes, $cols-iterations) using ($i, $size) {
+  @include generated-size-variants($screen-sizes, $max-columns) using ($i, $size) {
     @if $size == sm {
       @media only screen and (min-width: $min-screen-size-sm) {
         grid-template-columns: repeat($i, minmax(0, 1fr));

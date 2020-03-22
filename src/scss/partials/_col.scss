@@ -11,7 +11,7 @@
         grid-column-start: auto;
       }
 
-      @include generated-variants($cols-iterations, true) using ($i) {
+      @include generated-variants($max-columns, true) using ($i) {
         grid-column-start: $i;
       }
     }
@@ -21,18 +21,18 @@
         grid-column-end: auto;
       }
 
-      @include generated-variants($cols-iterations, true) using ($i) {
+      @include generated-variants($max-columns, true) using ($i) {
         grid-column-end: $i;
       }
     }
 
     &-span {
-      @include generated-variants($cols-iterations) using ($i) {
+      @include generated-variants($max-columns) using ($i) {
         grid-column: span $i / span $i;
       }
 
       // Responsive
-      @include generated-size-variants($screen-sizes, $cols-iterations) using ($i, $size) {
+      @include generated-size-variants($screen-sizes, $max-columns) using ($i, $size) {
         @if $size == sm {
           @media only screen and (min-width: $min-screen-size-sm) {
             grid-column: span $i / span $i;

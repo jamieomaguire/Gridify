@@ -11,7 +11,7 @@
         grid-row-start: auto;
       }
 
-      @include generated-variants($rows-iterations, true) using ($i) {
+      @include generated-variants($max-rows, true) using ($i) {
         grid-row-start: $i;
       }
     }
@@ -21,18 +21,18 @@
         grid-row-end: auto;
       }
 
-      @include generated-variants($rows-iterations, true) using ($i) {
+      @include generated-variants($max-rows, true) using ($i) {
         grid-row-end: $i;
       }
     }
 
     &-span {
-      @include generated-variants($rows-iterations) using ($i) {
+      @include generated-variants($max-rows) using ($i) {
         grid-row: span $i / span $i;
       }
 
       // Responsive
-      @include generated-size-variants($screen-sizes, $rows-iterations) using ($i, $size) {
+      @include generated-size-variants($screen-sizes, $max-rows) using ($i, $size) {
         @if $size == sm {
           @media only screen and (min-width: $min-screen-size-sm) {
             grid-row: span $i / span $i;
