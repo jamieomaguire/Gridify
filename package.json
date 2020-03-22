@@ -2,12 +2,8 @@
   "name": "@jamieomaguire/gridify",
   "version": "1.0.0",
   "description": "A utility-first CSS Grid library",
-  "main": "gridify.css",
-  "style": "gridify.css",
-  "files": [
-    "LICENSE.md",
-    "gridify.css"
-  ],
+  "main": "gridify.scss",
+  "style": "gridify.scss",
   "repository": "jamieomaguire/gridify",
   "license": "MIT"
 }
