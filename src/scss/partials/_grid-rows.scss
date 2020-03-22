@@ -1,0 +1,8 @@
+/**
+  * Sets up grid rows
+  */
+.gfy-grid-rows {
+  @include generated-variants($rows-iterations) using ($i) {
+    grid-template-rows: repeat($i, 1fr);
+  }
+}

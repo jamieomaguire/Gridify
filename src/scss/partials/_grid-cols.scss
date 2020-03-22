@@ -1,5 +1,36 @@
+/**
+  * Sets up grid columns
+  */
 .gfy-grid-cols {
   @include generated-variants($cols-iterations) using ($i) {
-    grid-template-columns: repeat($i, 1fr);
+    grid-template-columns: repeat($i, minmax(0, 1fr));
   }
+
+  @include generated-size-variants($screen-sizes, $cols-iterations) using ($i, $size) {
+    @if $size == s {
+      @media only screen and (max-width: 500px) {
+        grid-template-columns: repeat($i, minmax(0, 1fr));
+      }
+    } @else if $size == m {
+      @media only screen and (max-width: 700px) {
+        grid-template-columns: repeat($i, minmax(0, 1fr));
+      }
+    } @else if $size == l {
+      @media only screen and (max-width: 1000px) {
+        grid-template-columns: repeat($i, minmax(0, 1fr));
+      }
+    }
+  }
+
+  // &\:s\:1 {
+  //   @media only screen and (max-width: 500px) {
+  //     grid-template-columns: repeat(1, 1fr);
+  //   }
+  // }
+
+  // &\:s\:2 {
+  //   @media only screen and (max-width: 500px) {
+  //     grid-template-columns: repeat(2, 1fr);
+  //   }
+  // }
 }

@@ -12,3 +12,13 @@
     }
   }
 }
+
+@mixin generated-size-variants($sizes, $variant-count) {
+  @each $size in $sizes {
+    @for $i from 1 through $variant-count {
+      &\:#{$size}\:#{$i} {
+        @content($i, $size);
+      }
+    }
+  }
+}
