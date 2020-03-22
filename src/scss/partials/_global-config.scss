@@ -2,14 +2,3 @@
   * Global variables
   */
   $screen-sizes: sm, md, lg, xl;
-
-// TODO: Client needs to set up these variables before importing the grid
-$grid-gap-base: 1rem;
-$min-screen-size-sm: 300px;
-$min-screen-size-md: 600px;
-$min-screen-size-lg: 1000px;
-$min-screen-size-xl: 1400px;
-
-$gap-iterations: 10;
-$cols-iterations: 12;
-$rows-iterations: 12;

@@ -1,10 +1,8 @@
 /**
   * Defines the gap of a CSS Grid
   */
-.gfy-grid-gap {
-  $grid-gap: $grid-gap-base;
-  
+.gfy-grid-gap {  
   @include generated-variants($gap-iterations) using ($i) {
-    grid-gap: calc(#{$i} * #{$grid-gap}); 
+    grid-gap: calc(#{$i} * #{$grid-gap-base}); 
   }
 }
