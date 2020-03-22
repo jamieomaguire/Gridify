@@ -1,0 +1,55 @@
+/**
+  * Sets up start and end for an individual row
+  */
+  .gfy-row {
+    &-auto {
+      grid-row: auto;
+    }
+
+    &-start {
+      &\:auto {
+        grid-row-start: auto;
+      }
+
+      @include generated-variants($rows-iterations, true) using ($i) {
+        grid-row-start: $i;
+      }
+    }
+
+    &-end {
+      &\:auto {
+        grid-row-end: auto;
+      }
+
+      @include generated-variants($rows-iterations, true) using ($i) {
+        grid-row-end: $i;
+      }
+    }
+
+    &-span {
+      @include generated-variants($rows-iterations) using ($i) {
+        grid-row: span $i / span $i;
+      }
+
+      // Responsive
+      @include generated-size-variants($screen-sizes, $rows-iterations) using ($i, $size) {
+        @if $size == sm {
+          @media only screen and (min-width: $min-screen-size-sm) {
+            grid-row: span $i / span $i;
+          }
+        } @else if $size == md {
+          @media only screen and (min-width: $min-screen-size-md) {
+            grid-row: span $i / span $i;
+          }
+        } @else if $size == lg {
+          @media only screen and (min-width: $min-screen-size-lg) {
+            grid-row: span $i / span $i;
+          }
+        } @else if $size == xl {
+          @media only screen and (min-width: $min-screen-size-xl) {
+            grid-row: span $i / span $i;
+          }
+        }
+      }
+    } 
+  }

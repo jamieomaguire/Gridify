@@ -1,0 +1,103 @@
+.gfy-grid-flow {
+  @each $size in $screen-sizes {
+    &\:#{$size}\:col {
+      @if $size == sm {
+        @media only screen and (min-width: $min-screen-size-sm) {
+          grid-auto-flow: column;
+        }
+      } @else if $size == md {
+          @media only screen and (min-width: $min-screen-size-md) {
+            grid-auto-flow: column;
+          }
+      } @else if $size == lg {
+          @media only screen and (min-width: $min-screen-size-lg) {
+            grid-auto-flow: column;
+          }
+      }
+      @else if $size == xl {
+        @media only screen and (min-width: $min-screen-size-xl) {
+          grid-auto-flow: column;
+        }
+      }
+    }
+
+    &\:#{$size}\:col-dense {
+      @if $size == sm {
+        @media only screen and (min-width: $min-screen-size-sm) {
+          grid-auto-flow: column dense;
+        }
+      } @else if $size == md {
+          @media only screen and (min-width: $min-screen-size-md) {
+            grid-auto-flow: column dense;
+          }
+      } @else if $size == lg {
+          @media only screen and (min-width: $min-screen-size-lg) {
+            grid-auto-flow: column dense;
+          }
+      }
+      @else if $size == xl {
+        @media only screen and (min-width: $min-screen-size-xl) {
+          grid-auto-flow: column dense;
+        }
+      }
+    }
+
+    &\:#{$size}\:row {
+      @if $size == sm {
+        @media only screen and (min-width: $min-screen-size-sm) {
+          grid-auto-flow: row;
+        }
+      } @else if $size == md {
+          @media only screen and (min-width: $min-screen-size-md) {
+            grid-auto-flow: row;
+          }
+      } @else if $size == lg {
+          @media only screen and (min-width: $min-screen-size-lg) {
+            grid-auto-flow: row;
+          }
+      }
+      @else if $size == xl {
+        @media only screen and (min-width: $min-screen-size-xl) {
+          grid-auto-flow: row;
+        }
+      }
+    }
+
+    &\:#{$size}\:row-dense {
+      @if $size == sm {
+        @media only screen and (min-width: $min-screen-size-sm) {
+          grid-auto-flow: row dense;
+        }
+      } @else if $size == md {
+          @media only screen and (min-width: $min-screen-size-md) {
+            grid-auto-flow: row dense;
+          }
+      } @else if $size == lg {
+          @media only screen and (min-width: $min-screen-size-lg) {
+            grid-auto-flow: row dense;
+          }
+      }
+      @else if $size == xl {
+        @media only screen and (min-width: $min-screen-size-xl) {
+          grid-auto-flow: row dense;
+        }
+      }
+    }
+  }
+
+  &\:col {
+    grid-auto-flow: column;
+
+    &-dense {
+      grid-auto-flow: column dense;
+    }
+  }
+
+  &\:row {
+    grid-auto-flow: row;
+
+    &-dense {
+      grid-auto-flow: row dense;
+    }
+  }
+}

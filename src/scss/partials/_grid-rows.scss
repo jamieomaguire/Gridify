@@ -2,7 +2,32 @@
   * Sets up grid rows
   */
 .gfy-grid-rows {
+  &\:none {
+    grid-template-columns: none;
+  }
+
   @include generated-variants($rows-iterations) using ($i) {
-    grid-template-rows: repeat($i, 1fr);
+    grid-template-rows: repeat($i, minmax(0, 1fr));
+  }
+
+  @include generated-size-variants($screen-sizes, $rows-iterations) using ($i, $size) {
+    @if $size == sm {
+      @media only screen and (min-width: $min-screen-size-sm) {
+        grid-template-rows: repeat($i, minmax(0, 1fr));
+      }
+    } @else if $size == md {
+        @media only screen and (min-width: $min-screen-size-md) {
+          grid-template-rows: repeat($i, minmax(0, 1fr));
+        }
+    } @else if $size == lg {
+        @media only screen and (min-width: $min-screen-size-lg) {
+          grid-template-rows: repeat($i, minmax(0, 1fr));
+        }
+    }
+    @else if $size == xl {
+      @media only screen and (min-width: $min-screen-size-xl) {
+        grid-template-rows: repeat($i, minmax(0, 1fr));
+      }
+    }
   }
 }
